@@ -1,0 +1,161 @@
+﻿@model GetKitchenItemViewModel
+@{ Layout = "~/Views/Shared/_UserLayout.cshtml";
+    ViewData["Title"] = "User Kitchen";
+}}
+<div class="main-content page-content">
+
+    <!--==================================*
+               Main Section
+    *====================================-->
+    <div class="main-content-inner">
+        <div class="row mb-4">
+            <div class="col-md-12 grid-margin">
+                <div class="d-flex justify-content-between flex-wrap">
+                    <div class="d-flex align-items-center dashboard-header flex-wrap mb-3 mb-sm-0">
+                        <span><i class="feather ft-play"></i></span>
+                        <h5 class="mr-4 mb-0 font-weight-bold">All Kitchen Items</h5>
+                        <div class="d-flex align-items-baseline dashboard-breadcrumb text-right">
+                            <p class="text-muted mb-0 mr-1 hover-cursor">Kitchen &nbsp;|</p>
+                            <i class="mdi mdi-chevron-right mr-1 text-muted"></i>
+                            <p class="text-muted mb-0 mr-1 hover-cursor">Items</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- data table -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post" id="userForm" asp-controller="User" asp-action="AllKitchenItem">
+                            <p class="text-muted font-14 mb-4">@ViewBag.ErrorMessage</p>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-12  form-group mb-3">
+                                    <label asp-for="CategoryId" class="col-form-label"></label>
+                                    <select asp-for="CategoryId" asp-items="@(new SelectList (Model.KitchenItemCategories,"Id","CategoryName" ))" class="form-control input-rounded" id="ddlCategory">
+                                        <option selected="selected" value="0">Select an Option</option>
+                                    </select>
+                                </div>
+                                @*<div class="col-xl-6 col-lg-6 col-md-6 col-12  form-group mb-3">
+                                    <label asp-for="StatusId" class="col-form-label"></label>
+                                    <select asp-for="StatusId" asp-items="@(new SelectList (Model.Statuses,"Id","StatusName" ))" class="form-control input-rounded" id="ddlStatus">
+                                        <option selected="selected" value="0">Select an Option</option>
+                                    </select>
+                                </div>*@
+                                <div class="col-lg-6 col-md-6 col-12 form-button mb-3 text-right">
+                                    <button type="submit" class="btn btn-rounded btn-fixed-w btn-md btn-dark mb-3">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                        <h4 class="card_title">All Kitchen Items</h4>
+                        <div class="table-responsive">
+                            @*<form asp-action="AllSalesInformation" asp-controller="Admin" method="get">*@
+                            <table id="dataTable" class="text-center" style="width:100%">
+                                <thead class="bg-light text-capitalize">
+                                    <tr>
+                                        <th>Item Name</th>
+                                        <th>Category</th>
+                                        <th>Date Created</th>
+                                        <th scope="col">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.KitchenItems != null && Model.KitchenItems.Count > 0)
+                                    {
+                                        @foreach (var record in Model.KitchenItems)
+                                        {
+                                            <tr>
+                                                <td>@record.ItemName</td>
+                                                <td>@record.Category</td>
+                                                <td>@record.CreatedAt</td>
+                                                <td>
+                                                    <ul class="d-flex justify-content-center">
+                                                        <li>
+                                                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target=".detail-modal-lg-@record.Id"><i class="ti-eye"></i></button>
+                                                        </li>
+                                                        <!-- Details Modal -->
+                                                        <li>
+                                                            <div class="modal fade detail-modal-lg-@record.Id">
+                                                                <div class="modal-dialog modal-lg modal-dialog-centered">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title">Details</h5>
+                                                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <div class="info-table table-responsive mt-3">
+                                                                                <table class="table text-nowrap">
+                                                                                    <tbody>
+                                                                                        <tr class="first">
+                                                                                            <td align="left">Item Name:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.ItemName</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Category:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.Category</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Health Benefit:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.HealthBenefit</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Status:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.Status</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Created By:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.CreatedByName</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Date Created:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.CreatedAt</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Updated By:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.UpdatedBy</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Last Updated:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.UpdatedAt</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Date Approved:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.ApprovedAt</td>
+                                                                                        </tr>
+
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer d-flex justify-content-center align-items-center">
+                                                                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <div><h2>No Record Found</h2></div>
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- data table -->
+            </div>
+        </div>
+        <!--==================================*
+                   End Main Section
+        *====================================-->
+    </div>
+</div>

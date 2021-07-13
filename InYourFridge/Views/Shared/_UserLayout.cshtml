@@ -1,0 +1,580 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+
+    <!--=========================*
+                Met Data
+    *===========================-->
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Falr - Bootstrap 4 Admin Dashboard Template">
+
+    <!--=========================*
+              Page Title
+    *===========================-->
+    <title>IYK - In Your Kitchen</title>
+
+    <!--=========================*
+                Favicon
+    *===========================-->
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.png">
+
+    <!--=========================*
+            Bootstrap Css
+    *===========================-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+
+    <!--=========================*
+              Custom CSS
+    *===========================-->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!--=========================*
+               Owl CSS
+    *===========================-->
+    <link href="../assets/css/owl.carousel.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/owl.theme.default.min.css" rel="stylesheet" type="text/css">
+
+    <!--=========================*
+            Font Awesome
+    *===========================-->
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+
+    <!--=========================*
+             Themify Icons
+    *===========================-->
+    <link rel="stylesheet" href="../assets/css/themify-icons.css">
+
+    <!--=========================*
+               Ionicons
+    *===========================-->
+    <link href="../assets/css/ionicons.min.css" rel="stylesheet" />
+
+    <!--=========================*
+              EtLine Icons
+    *===========================-->
+    <link href="../assets/css/et-line.css" rel="stylesheet" />
+
+    <!--=========================*
+              Feather Icons
+    *===========================-->
+    <link href="../assets/css/feather.css" rel="stylesheet" />
+
+    <!--=========================*
+              Flag Icons
+    *===========================-->
+    <link href="../assets/css/flag-icon.min.css" rel="stylesheet" />
+
+    <!--=========================*
+              Material Icons
+    *===========================-->
+    <link href="../assets/css/materialdesignicons.min.css" rel="stylesheet" />
+
+    <!--=========================*
+              Modernizer
+    *===========================-->
+    <script src="../assets/js/modernizr-2.8.3.min.js"></script>
+
+    <!--=========================*
+               Metis Menu
+    *===========================-->
+    <link rel="stylesheet" href="../assets/css/metisMenu.css">
+
+    <!--=========================*
+               Slick Menu
+    *===========================-->
+    <link rel="stylesheet" href="../assets/css/slicknav.min.css">
+
+    <!--=========================*
+              Flag Icons
+    *===========================-->
+    <link href="../assets/css/flag-icon.min.css" rel="stylesheet" />
+
+    <!--=========================*
+              Material Icons
+    *===========================-->
+    <link href="../assets/css/materialdesignicons.min.css" rel="stylesheet" />
+
+    <!--=========================*
+               AM Chart
+    *===========================-->
+    <link rel="stylesheet" href="../assets/vendors/am-charts/css/am-charts.css" type="text/css" media="all" />
+
+    <!--=========================*
+               Morris Css
+    *===========================-->
+    <link rel="stylesheet" href="../assets/vendors/charts/morris-bundle/morris.css">
+
+    <!--=========================*
+           J Vector Map Css
+    *===========================-->
+    <link href="../assets/vendors/j-vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+
+    <!--=========================*
+            Google Fonts
+    *===========================-->
+    <!-- Font USE: 'Roboto', sans-serif;-->
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap"
+          rel="stylesheet">
+
+    <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!--=========================*
+             Page Container
+    *===========================-->
+    <div id="page-container">
+
+        <!--==================================*
+                   Header Section
+        *====================================-->
+        <div class="header-area">
+
+            <!--======================*
+                       Logo
+            *=========================-->
+            <div class="header-area-left d-flex justify-content-center align-items-center">
+                <a asp-action="Index" asp-controller="User" class="logo">
+                    <span>
+                        <h3 style="font-weight: bold; height: 18px; color: #fff;">IYK</h3>
+                    </span>
+                    <i>
+                        <h3 style="font-weight: bold; height: 18px; color: #fff;">D</h3>
+                    </i>
+                </a>
+            </div>
+            <!--======================*
+                      End Logo
+            *=========================-->
+
+            <div class="row align-items-center header_right">
+                <!--==================================*
+                         Navigation and Search
+                *====================================-->
+                <div class="col-md-6 d_none_sm d-flex align-items-center">
+                    <div class="nav-btn button-menu-mobile pull-left">
+                        <button class="open-left waves-effect">
+                            <i class="ion-android-menu"></i>
+                        </button>
+                    </div>
+                    <div class="search-box pull-left">
+                        <form action="#">
+                            <i class="ti-search"></i>
+                            <input type="text" name="search" placeholder="Search..." required="">
+                        </form>
+                    </div>
+                </div>
+                <!--==================================*
+                         End Navigation and Search
+                *====================================-->
+                <!--==================================*
+                         Notification Section
+                *====================================-->
+                <div class="col-md-6 col-sm-12">
+                    <ul class="notification-area pull-right">
+                        <li class="mobile_menu_btn">
+                            <span class="nav-btn pull-left d_none_lg">
+                                <button class="open-left waves-effect">
+                                    <i class="ion-android-menu"></i>
+                                </button>
+                            </span>
+                        </li>
+                        <li id="full-view" class="d_none_sm"><i class="feather ft-maximize"></i></li>
+                        <li id="full-view-exit" class="d_none_sm"><i class="feather ft-minimize"></i></li>
+                        <li class="dropdown">
+                            <i class="feather ft-bell dropdown-toggle" data-toggle="dropdown">
+                                <span class="badge bg-danger rounded-pill">7</span>
+                            </i>
+                            <div class="dropdown-menu bell-notify-box notify-box">
+                                <span class="notify-title">You have 3 new notifications </span>
+                                <div class="nofity-list">
+                                    <a href="#" class="notify-item">
+                                        <div class="notify-thumb"><i class="ti-map-alt bg_blue"></i></div>
+                                        <div class="notify-text">
+                                            <h3>You added your Location</h3>
+                                            <span>Just Now</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="notify-item">
+                                        <div class="notify-thumb"><i class="ti-bolt-alt bg_warning"></i></div>
+                                        <div class="notify-text">
+                                            <h3>Your Subscription Expired</h3>
+                                            <span>30 Seconds ago</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="notify-item">
+                                        <div class="notify-thumb"><i class="ti-heart bg_danger"></i></div>
+                                        <div class="notify-text">
+                                            <h3>Some special like you</h3>
+                                            <span>Just Now</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="notify-item">
+                                        <div class="notify-thumb"><i class="ti-comments bg_info"></i></div>
+                                        <div class="notify-text">
+                                            <h3>New Commetns On Post</h3>
+                                            <span>30 Seconds ago</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="notify-item">
+                                        <div class="notify-thumb"><i class="ti-settings bg_secondary"></i></div>
+                                        <div class="notify-text">
+                                            <h3>You changed your Settings</h3>
+                                            <span>Just Now</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="notify-item">
+                                        <div class="notify-thumb"><i class="ti-image bg_success"></i></div>
+                                        <div class="notify-text">
+                                            <h3>Image Uploaded Successfully</h3>
+                                            <span>Just Now</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <i class="feather ft-mail dropdown-toggle" data-toggle="dropdown">
+                                <span class="notification_dot"></span>
+                            </i>
+                            <div class="dropdown-menu notify-box nt-enveloper-box">
+                                <span class="notify-title">You have 3 new Messages</span>
+                                <div class="nofity-list">
+                                    <a href="#" class="notify-item">
+                                        <div class="notify-thumb">
+                                            <img src="../assets/images/author/author-img1.jpg" alt="image">
+                                        </div>
+                                        <div class="notify-text">
+                                            <h3>Jhon Doe</h3>
+                                            <span class="msg">Hello are you there?</span>
+                                            <span>3:15 PM</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="notify-item">
+                                        <div class="notify-thumb">
+                                            <img src="../assets/images/author/author-img2.jpg" alt="image">
+                                        </div>
+                                        <div class="notify-text">
+                                            <h3>David Boos</h3>
+                                            <span class="msg">Waiting for your Response...</span>
+                                            <span>3:15 PM</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="notify-item">
+                                        <div class="notify-thumb">
+                                            <img src="../assets/images/user.jpg" alt="image">
+                                        </div>
+                                        <div class="notify-text">
+                                            <h3>Jason Roy</h3>
+                                            <span class="msg">Hi there, Hope you are well</span>
+                                            <span>3:15 PM</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="notify-item">
+                                        <div class="notify-thumb">
+                                            <img src="../assets/images/author/author-img4.jpg" alt="image">
+                                        </div>
+                                        <div class="notify-text">
+                                            <h3>Malika Roy</h3>
+                                            <span class="msg">Your Product Dispatched form Warehouse...</span>
+                                            <span>3:15 PM</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="notify-item">
+                                        <div class="notify-thumb">
+                                            <img src="../assets/images/author/author-img2.jpg" alt="image">
+                                        </div>
+                                        <div class="notify-text">
+                                            <h3>Raven Jhon</h3>
+                                            <span class="msg">Please recieve your parcel from our store</span>
+                                            <span>3:15 PM</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="notify-item">
+                                        <div class="notify-thumb">
+                                            <img src="../assets/images/author/author-img1.jpg" alt="image">
+                                        </div>
+                                        <div class="notify-text">
+                                            <h3>Angela Yo</h3>
+                                            <span class="msg">You recieved a new message...</span>
+                                            <span>3:15 PM</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="notify-item">
+                                        <div class="notify-thumb">
+                                            <img src="../assets/images/user.jpg" alt="image">
+                                        </div>
+                                        <div class="notify-text">
+                                            <h3>Rebecca Jhon</h3>
+                                            <span class="msg">Hey I am waiting for you...</span>
+                                            <span>3:15 PM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="user-dropdown">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="../assets/images/user.jpg" alt="" class="img-fluid">
+                                </button>
+                                <div class="dropdown-menu dropdown_user" aria-labelledby="dropdownMenuButton">
+                                    <div class="dropdown-header d-flex flex-column align-items-center">
+                                        <div class="user_img mb-3">
+                                            <img src="../assets/images/user.jpg" alt="User Image">
+                                        </div>
+                                        <div class="user_bio text-center">
+                                            <p class="name font-weight-bold mb-0">Monica Jhonson</p>
+                                            <p class="email text-muted mb-3">
+                                                <a class="pl-3 pr-3"
+                                                   href="monica%40jhon.co.uk">monica@jhon.co.uk</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <a class="dropdown-item" href="profile.html"><i class="ti-user"></i> Profile</a>
+                                    <span role="separator" class="divider"></span>
+                                    <a class="dropdown-item" href="login.html"><i class="ti-power-off"></i>Logout</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--==================================*
+                         End Notification Section
+                *====================================-->
+            </div>
+
+        </div>
+        <!--==================================*
+                   End Header Section
+        *====================================-->
+        <!--=========================*
+                 Side Bar Menu
+        *===========================-->
+        <div class="sidebar_menu">
+            <div class="menu-inner">
+                <div id="sidebar-menu">
+                    <!--=========================*
+                               Main Menu
+                    *===========================-->
+                    <ul class="metismenu" id="sidebar_menu">
+                        <li class="menu-title">User</li>
+                        <li class="active">
+                            <a asp-action="Index" asp-controller="User">
+                                <i class="feather ft-home"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-title">Kitchen Product</li>
+                        <li>
+                            <a href="javascript:void(0)" aria-expanded="true">
+                                <i class="feather ft-play"></i>
+                                <span>Kitchen Product</span>
+                                <span class="float-right arrow"><i class="ion ion-chevron-down"></i></span>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a asp-action="SearchKitchenProduct" asp-controller="User">
+                                        <i class="ti-pencil-alt"></i><span>
+                                            Search KItchen Product
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-action="CreateKitchenProduct" asp-controller="User">
+                                        <i class="ti-pencil-alt"></i><span>
+                                            Save KItchen Item
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-action="MyKitchenProduct" asp-controller="User">
+                                        <i class="ion-ios-folder-outline"></i><span>
+                                            My Kitchen Product
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-action="AllKitchenProduct" asp-controller="User">
+                                        <i class="ion-ios-folder-outline"></i><span>
+                                            All Kitchen Product
+                                        </span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="menu-title">Kitchen Item</li>
+                        <li>
+                            <a href="javascript:void(0)" aria-expanded="true">
+                                <i class="feather ft-play"></i>
+                                <span>Kitchen Item</span>
+                                <span class="float-right arrow"><i class="ion ion-chevron-down"></i></span>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a asp-action="CreateKitchenItem" asp-controller="User">
+                                        <i class="ti-pencil-alt"></i><span>
+                                            Save KItchen Item
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-action="MyKitchenItem" asp-controller="User">
+                                        <i class="ion-ios-folder-outline"></i><span>
+                                            My Kitchen Item
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-action="AllKitchenItem" asp-controller="User">
+                                        <i class="ion-ios-folder-outline"></i><span>
+                                            All Kitchen Item
+                                        </span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-title">Kitchen Market</li>
+                        <li>
+                            <a href="javascript:void(0)" aria-expanded="true">
+                                <i class="feather ft-play"></i>
+                                <span>Kitchen Market</span>
+                                <span class="float-right arrow"><i class="ion ion-chevron-down"></i></span>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a asp-action="CreateKitchenMarket" asp-controller="User">
+                                        <i class="ti-pencil-alt"></i><span>
+                                            Add Market
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-action="KitchenMarket" asp-controller="User">
+                                        <i class="ion-ios-folder-outline"></i><span>
+                                            Enter Market
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-title">Points</li>
+                        <li>
+                            <a href="javascript:void(0)" aria-expanded="true">
+                                <i class="feather ft-play"></i>
+                                <span>Points</span>
+                                <span class="float-right arrow"><i class="ion ion-chevron-down"></i></span>
+                            </a>
+                            <ul class="submenu">
+
+                                <li>
+                                    <a asp-action="MakePayment" asp-controller="User">
+                                        <i class="ti-pencil-alt"></i><span>
+                                            Subscribe
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a asp-action="Logout" asp-controller="Home" aria-expanded="true">
+                                <i class="feather ft-list"></i>
+                                <span>Logout</span>
+                            </a>
+                        </li>
+                        <!--=========================*
+                                  End Main Menu
+                        *===========================-->
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!--=========================*
+               End Side Bar Menu
+        *===========================-->
+        <!--==================================*
+                   Main Content Section
+        *====================================-->
+        @RenderBody()
+        <!--=================================*
+               End Main Content Section
+        *===================================-->
+        <!--=================================*
+                      Footer Section
+        *===================================-->
+        <footer>
+            <div class="footer-area">
+                <p>&copy; Copyright 2021. All right reserved. In Your Kitchen.</p>
+            </div>
+        </footer>
+        <!--=================================*
+                    End Footer Section
+        *===================================-->
+
+    </div>
+    <!--=========================*
+            End Page Container
+    *===========================-->
+    <!--=========================*
+                Scripts
+    *===========================-->
+    <!-- Jquery Js -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- Owl Carousel Js -->
+    <script src="../assets/js/owl.carousel.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="../assets/js/metisMenu.min.js"></script>
+    <!-- SlimScroll Js -->
+    <script src="../assets/js/jquery.slimscroll.min.js"></script>
+    <!-- Slick Nav -->
+    <script src="../assets/js/jquery.slicknav.min.js"></script>
+    <!-- ========== This Page js ========== -->
+    <!--Chart Js-->
+    <script src="../assets/vendors/charts/charts-bundle/Chart.bundle.js"></script>
+
+    <!-- Flot Chart -->
+    <script src="../assets/vendors/charts/flot/jquery.flot.js"></script>
+    <script src="../assets/vendors/charts/flot/jquery.flot.resize.js"></script>
+    <script src="../assets/vendors/charts/flot/jquery.flot.categories.js"></script>
+    <script src="../assets/vendors/charts/flot/jquery.flot.fillbetween.js"></script>
+    <script src="../assets/vendors/charts/flot/jquery.flot.stack.js"></script>
+    <script src="../assets/vendors/charts/float-bundle/jquery.flot.pie.js"></script>
+
+    <!--Home Script-->
+    <script src="../assets/js/home.js"></script>
+
+    <!-- ========== This Page js ========== -->
+    <!-- Main Js -->
+    <script src="../assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"
+            integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @if (IsSectionDefined("Scripts"))
+    {
+@RenderSection("Scripts", required: true)}
+</body>
+
+</html>

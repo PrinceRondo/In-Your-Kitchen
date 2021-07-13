@@ -1,0 +1,203 @@
+﻿@model KitchenProductViewModel
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="main-content page-content">
+    <!--==================================*
+               Main Section
+    *====================================-->
+    <div class="main-content-inner">
+
+        <div class="row mb-4">
+            <div class="col-md-12 grid-margin">
+                <div class="d-flex justify-content-between flex-wrap">
+                    <div class="d-flex align-items-center dashboard-header flex-wrap mb-3 mb-sm-0">
+                        <span><i class="feather ft-play"></i></span>
+                        <h5 class="mr-4 mb-0 font-weight-bold">Create Kitchen Product</h5>
+                        <div class="d-flex align-items-baseline dashboard-breadcrumb text-right">
+                            <p class="text-muted mb-0 mr-1 hover-cursor">Kitchen &nbsp;|</p>
+                            <i class="mdi mdi-chevron-right mr-1 text-muted"></i>
+                            <p class="text-muted mb-0 mr-1 hover-cursor">Product</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Textual inputs -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card_title">Create Single Product</h4>
+                        @*<p class="text-muted font-14 mb-4">All Fields are Required.</p>*@
+                        @if (ViewBag.Code == null)
+                        {
+
+                        }
+                        else if (ViewBag.Code == 200)
+                        {
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Hello!</strong> @ViewBag.Message
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Hello!</strong> @ViewBag.Message
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        }
+                        <form method="post" id="userForm" asp-controller="User" asp-action="CreateKitchenProduct">
+                            <input hidden asp-for="CreatedBy" />
+                            <input hidden asp-for="EntryTypeId" />
+                            <p class="text-muted font-14 mb-4">@ViewBag.ErrorMessage</p>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-3 col-12 form-group mb-3">
+                                    <label asp-for="CategoryId1" class="col-form-label"></label>
+                                    <select asp-for="CategoryId1" asp-items="@(new SelectList (Model.Categories,"Id","CategoryName" ))" class="form-control input-rounded" id="ddlCategory1">
+                                        <option selected="selected" value="0">Select Category</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-3 col-12 form-group mb-3">
+                                    <label asp-for="CategoryId2" class="col-form-label"></label>
+                                    <select asp-for="CategoryId2" asp-items="@(new SelectList (Model.Categories,"Id","CategoryName" ))" class="form-control input-rounded" id="ddlCategory2">
+                                        <option selected="selected" value="0">Select Category</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-3 col-12 form-group mb-3">
+                                    <label asp-for="CategoryId3" class="col-form-label"></label>
+                                    <select asp-for="CategoryId3" asp-items="@(new SelectList (Model.Categories,"Id","CategoryName" ))" class="form-control input-rounded" id="ddlCategory3">
+                                        <option selected="selected" value="0">Select Category</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-3 col-12 form-group mb-3">
+                                    <label asp-for="Item1" class="col-form-label"></label>
+                                    <select asp-for="Item1" class="form-control input-rounded" id="ddlItem1">
+                                        <option selected="selected" value="0">Select an Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-3 col-12 form-group mb-3">
+                                    <label asp-for="Item2" class="col-form-label"></label>
+                                    <select asp-for="Item2" class="form-control input-rounded" id="ddlItem2">
+                                        <option selected="selected" value="0">Select an Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-3 col-12 form-group mb-3">
+                                    <label asp-for="Item3" class="col-form-label"></label>
+                                    <select asp-for="Item3" class="form-control input-rounded" id="ddlItem3">
+                                        <option selected="selected" value="0">Select an Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-3 col-12 form-group mb-3">
+                                    <label asp-for="ProductName" class="col-form-label"></label>
+                                    <input asp-for="ProductName" class="form-control mb-4 input-rounded" type="text" id="Comment-input">
+                                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                                </div>
+                                <div class="col-lg-4 col-md-3 col-12 form-group mb-3">
+                                    <label asp-for="ProductPreparation" class="col-form-label"></label>
+                                    <input asp-for="ProductPreparation" class="form-control mb-4 input-rounded" type="text" id="Comment-input">
+                                    <span asp-validation-for="ProductPreparation" class="text-danger"></span>
+                                </div>
+                                <div class="col-lg-4 col-md-3 col-12 form-group mb-3">
+                                    <label asp-for="HealthBenefit" for="Comment-input" class="col-form-label"></label>
+                                    <input asp-for="HealthBenefit" class="form-control mb-4 input-rounded" type="text" id="Comment-input">
+                                    <span asp-validation-for="HealthBenefit" class="text-danger"></span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-12 form-button mb-3 text-right">
+                                    <button type="submit" class="btn btn-rounded btn-fixed-w btn-md btn-dark mb-3">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Textual inputs -->
+    </div>
+
+</div>
+
+<script src="~/assets/js/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#ddlItem1").prop("disabled", true);
+        $("#ddlCategory1").change(function () {
+            var id = $("#ddlCategory1").val();
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url: '@Url.Action("GetItem", "User")',
+                data: { "categoryId": id },
+                success: function (json, textStatus) {
+                    $("#ddlItem1").empty();
+                    json = json || {};
+                    $("#ddlItem1").append('<option value="' + "0" + '">' + "Select Item" + '</option>');
+                    for (var i = 0; i < json.length; i++) {
+                        $("#ddlItem1").append('<option value="' + json[i].id + '">' + json[i].itemName + '</option>');
+                    }
+                    $("#ddlItem1").prop("disabled", false);
+                },
+                error: function () {
+                    alert("Data Not Found");
+                }
+        });
+        });
+    });
+
+    $(document).ready(function () {
+        $("#ddlItem2").prop("disabled", true);
+        $("#ddlCategory2").change(function () {
+            var id = $("#ddlCategory2").val();
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url: '@Url.Action("GetItem", "User")',
+                data: { "categoryId": id },
+                success: function (json, textStatus) {
+                    $("#ddlItem2").empty();
+                    json = json || {};
+                    $("#ddlItem2").append('<option value="' + "0" + '">' + "Select Item" + '</option>');
+                    for (var i = 0; i < json.length; i++) {
+                        $("#ddlItem2").append('<option value="' + json[i].id + '">' + json[i].itemName + '</option>');
+                    }
+                    $("#ddlItem2").prop("disabled", false);
+                },
+                error: function () {
+                    alert("Data Not Found");
+                }
+        });
+        });
+    });
+
+    $(document).ready(function () {
+        $("#ddlItem3").prop("disabled", true);
+        $("#ddlCategory3").change(function () {
+            var id = $("#ddlCategory3").val();
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url: '@Url.Action("GetItem", "User")',
+                data: { "categoryId": id },
+                success: function (json, textStatus) {
+                    $("#ddlItem3").empty();
+                    json = json || {};
+                    $("#ddlItem3").append('<option value="' + "0" + '">' + "Select Item" + '</option>');
+                    for (var i = 0; i < json.length; i++) {
+                        $("#ddlItem3").append('<option value="' + json[i].id + '">' + json[i].itemName + '</option>');
+                    }
+                    $("#ddlItem3").prop("disabled", false);
+                },
+                error: function () {
+                    alert("Data Not Found");
+                }
+        });
+        });
+    });
+</script>

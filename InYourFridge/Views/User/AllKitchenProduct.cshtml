@@ -1,0 +1,175 @@
+﻿@model GetKitchenProductViewModel
+@{ Layout = "~/Views/Shared/_UserLayout.cshtml";
+    ViewData["Title"] = "User Kitchen";
+}}
+<div class="main-content page-content">
+
+    <!--==================================*
+               Main Section
+    *====================================-->
+    <div class="main-content-inner">
+        <div class="row mb-4">
+            <div class="col-md-12 grid-margin">
+                <div class="d-flex justify-content-between flex-wrap">
+                    <div class="d-flex align-items-center dashboard-header flex-wrap mb-3 mb-sm-0">
+                        <span><i class="feather ft-play"></i></span>
+                        <h5 class="mr-4 mb-0 font-weight-bold">All Kitchen Products</h5>
+                        <div class="d-flex align-items-baseline dashboard-breadcrumb text-right">
+                            <p class="text-muted mb-0 mr-1 hover-cursor">Kitchen &nbsp;|</p>
+                            <i class="mdi mdi-chevron-right mr-1 text-muted"></i>
+                            <p class="text-muted mb-0 mr-1 hover-cursor">Products</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- data table -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card_title">All Kitchen Products</h4>
+                        @if (ViewBag.Code == 0 || ViewBag.Code == null)
+                        {
+
+                        }
+                        else if (ViewBag.Code == 200)
+                        {
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Hello!</strong> @ViewBag.Message
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Hello!</strong> @ViewBag.Message
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        }
+                        <div class="table-responsive">
+                            @*<form asp-action="AllSalesInformation" asp-controller="Admin" method="get">*@
+                            <table id="dataTable" class="text-center" style="width:100%">
+                                <thead class="bg-light text-capitalize">
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <th>Date Created</th>
+                                        <th scope="col">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.KitchenProducts != null && Model.KitchenProducts.Count > 0)
+                                    {
+                                        @foreach (var record in Model.KitchenProducts)
+                                        {
+                                            <tr>
+                                                <td>@record.getKitchenProduct.ProductName</td>
+                                                <td>@record.getKitchenProduct.Status</td>
+                                                <td>@record.getKitchenProduct.CreatedAt</td>
+                                                <td>
+                                                    <ul class="d-flex justify-content-center">
+                                                        <li>
+                                                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target=".detail-modal-lg-@record.getKitchenProduct.Id"><i class="ti-eye"></i></button>
+                                                        </li>
+                                                        <!-- Details Modal -->
+                                                        <li>
+                                                            <div class="modal fade detail-modal-lg-@record.getKitchenProduct.Id">
+                                                                <div class="modal-dialog modal-lg modal-dialog-centered">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title">Details</h5>
+                                                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <div class="info-table table-responsive mt-3">
+                                                                                <table class="table text-nowrap">
+                                                                                    <tbody>
+                                                                                        <tr class="first">
+                                                                                            <td>
+                                                                                                <table class="table text-nowrap">
+                                                                                                    @foreach (var item in record.productItems)
+                                                                                                    {
+                                                                                                        <tr>
+                                                                                                            <td align="left">Item:</td>
+                                                                                                            <td align="left" class="font-medium text-dark-medium">@item.Item</td>
+                                                                                                        </tr>
+                                                                                                        }
+                                                                                                    </table>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr class="first">
+                                                                                            <td align="left">Item Name:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.getKitchenProduct.ProductName</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Category:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.getKitchenProduct.HealthBenefit</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Health Benefit:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.getKitchenProduct.ProductPreparation</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Status:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.getKitchenProduct.Status</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Created By:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.getKitchenProduct.CreatedByName</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Date Created:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.getKitchenProduct.CreatedAt</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Updated By:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.getKitchenProduct.UpdatedBy</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Last Updated:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.getKitchenProduct.UpdatedAt</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left">Date Approved:</td>
+                                                                                            <td align="left" class="font-medium text-dark-medium">@record.getKitchenProduct.ApprovedAt</td>
+                                                                                        </tr>
+
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer d-flex justify-content-center align-items-center">
+                                                                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <div><h2>No Record Found</h2></div>
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- data table -->
+            </div>
+        </div>
+        <!--==================================*
+                   End Main Section
+        *====================================-->
+    </div>
+</div>

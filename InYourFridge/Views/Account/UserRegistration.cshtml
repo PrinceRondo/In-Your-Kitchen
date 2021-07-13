@@ -1,0 +1,77 @@
+﻿@model ProfileViewModel
+@{
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+    ViewData["Title"] = "User Registration";
+}
+
+<!--login-bg-->
+
+<div class="login-form">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-7">
+                <form method="post">
+                    <div class="login-form-body">
+                        <h3><strong>IYF</strong></h3>
+                        <p class="mb-4">
+                            Register to start Managing your Kitchen. A powerful and easy-to-use
+                            InYourKitchen is only a few clicks away.
+                        </p>
+                        @if (ViewBag.Code == null)
+                        {
+
+                        }
+                        else if (ViewBag.Code == 200)
+                        {
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Hello!</strong> @ViewBag.Message
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Hello!</strong> @ViewBag.Message
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        }
+                        <div class="form-gp mt-4">
+                            <label asp-for="Email">Email address</label>
+                            <input asp-for="Email" type="email" id="exampleInputEmail1">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                            <i class="ti-email"></i>
+                        </div>
+                        <div class="form-gp">
+                            <label asp-for="Password">Password</label>
+                            <input asp-for="Password" type="password" id="exampleInputPassword1">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                            <i class="ti-lock"></i>
+                        </div>
+                        <div class="form-gp mt-4">
+                            <label asp-for="FirstName">First Name</label>
+                            <input asp-for="FirstName" type="text" id="exampleInputFirstName">
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                            <i class="ti-text"></i>
+                        </div>
+                        <div class="form-gp">
+                            <label asp-for="LastName">Last Name</label>
+                            <input asp-for="LastName" type="text" id="exampleInputLastName">
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                            <i class="ti-text"></i>
+                        </div>
+                        <div class="submit-btn-area">
+                            <button id="form_submit" type="submit" class="btn btn-primary">
+                                Submit <i class="ti-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--login-form-->

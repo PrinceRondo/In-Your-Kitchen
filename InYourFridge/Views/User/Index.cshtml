@@ -1,0 +1,129 @@
+﻿@model DashboardViewModel
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    ViewData["Title"] = "User Dashboard";
+}
+<div class="main-content page-content">
+
+    <div class="main-content-header d-none d-md-block">
+        <div class="content-overlay"></div>
+        <div class="header-left">
+            <span style="font-size: 28px; color: #fff; font-weight: bold;">
+                Welcome, <strong>@Model.FirstName</strong>
+            </span>
+        </div>
+    </div>
+    <!--==================================*
+               Main Section
+    *====================================-->
+    <div class="main-content-inner content-margin">
+        <div class="row mb-4">
+            <div class="col-md-12 grid-margin">
+                <div class="d-flex justify-content-between flex-wrap">
+                    <div class="d-flex">
+                        <div class="btn-group mr-3">
+                            <button type="button" class="btn btn-primary">02 Aug 2021</button>
+                            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                                    id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                                <a class="dropdown-item" href="#">Sept 2021</a>
+                                <a class="dropdown-item" href="#">Oct 2021</a>
+                                <a class="dropdown-item" href="#">Nov 2021</a>
+                            </div>
+                        </div>
+                        <button class="btn bg-white border d-none d-sm-block">Download Report</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-md-6 col-lg-12 stretched_card">
+                <div class="card mb-mob-4 icon_card primary_card_bg">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <p class="card-title mb-0 text-white">User Point</p>
+                        <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                            <h3 class="mb-0 text-white">@Model.UserPoint</h3>
+                            <div class="arrow_icon"><i class="ion-arrow-up-c text-primary"></i></div>
+                        </div>
+                        <p class="mb-0 text-white">
+                            1.92% <span class="text-white ml-1">
+                                <small>
+                                    (Since last
+                                    month)
+                                </small>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 col-lg-12 stretched_card">
+                <div class="card mb-mob-4 icon_card success_card_bg">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <p class="card-title mb-0 text-white">User Point</p>
+                        <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                            <h3 class="mb-0 text-white">@Model.UserPoint</h3>
+                            <div class="arrow_icon"><i class="ion-arrow-down-c text-success"></i></div>
+                        </div>
+                        <p class="mb-0 text-white">
+                            1.92% <span class="text-white ml-1">
+                                <small>
+                                    (Since last
+                                    month)
+                                </small>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 col-lg-12 stretched_card">
+                <div class="card mb-mob-4 icon_card warning_card_bg">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <p class="card-title mb-0 text-white">User Point</p>
+                        <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                            <h3 class="mb-0 text-white">@Model.UserPoint</h3>
+                            <div class="arrow_icon"><i class="ion-arrow-up-c text-warning"></i></div>
+                        </div>
+                        <p class="mb-0 text-white">
+                            1.27% <span class="text-white ml-1">
+                                <small>
+                                    (Since last
+                                    month)
+                                </small>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 col-lg-12 stretched_card">
+                <div class="card mb-mob-4 icon_card info_card_bg">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <p class="card-title mb-0 text-white">User Point</p>
+                        <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                            <h3 class="mb-0 text-white">@Model.UserPoint</h3>
+                            <div class="arrow_icon"><i class="ion-arrow-up-c text-info"></i></div>
+                        </div>
+                        <p class="mb-0 text-white">
+                            9.12% <span class="text-white ml-1">
+                                <small>
+                                    (Since last
+                                    day)
+                                </small>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--==================================*
+               End Main Section
+    *====================================-->
+</div>
